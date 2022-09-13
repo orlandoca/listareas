@@ -12,6 +12,14 @@ body{
     margin-top: 40px;
 }
 
+h1{
+    color: #1b1b32;
+    font-size: 25px;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    margin: 20px 0;
+}
+
 .aplicacion-tareas {
     display: flex;
     flex-wrap: wrap;
@@ -28,4 +36,15 @@ body{
 .freecodecamp-logo{
     width: 400px;
     height: 100px;
+}
+
+/* lista de tareas */
+.tareas-lista-principal{
+    width: 600px;
+    height: 500px;
+    background-color: gray;
+    padding: 25px;
+    margin: 10px;
+    justify-content: center;
+    border-radius: 26px;
 }

@@ -9,7 +9,11 @@ function App() {
           src={freeCodeCampLogo}
           className='freecodecamp-logo' />
       </div>
+      <div className='tareas-lista-principal'>
+        <h1>Mis tareas</h1>
+      </div>
     </div>
+
   );
 }
 
