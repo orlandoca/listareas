@@ -1,10 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import freeCodeCampLogo from './imagenes/freecodecamp-logo2.png'
 
 function App() {
   return (
-    <div className="App">
-      React
+    <div className="aplicacion-tareas">
+      <div className= 'freecodecamp-logo-contenedor'>
+        <img 
+          src={freeCodeCampLogo}
+          className='freecodecamp-logo2' 
+        />
+      </div>
     </div>
   );
 }
