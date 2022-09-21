@@ -8,13 +8,16 @@ function ListaDeTareas(){
   const[tareas, setTareas] = useState([]);
 
   const agregarTarea = tarea =>{
-    console.log('tarea agregada');
-    console.log(tarea);
+    if(tarea.texto.trim()){    //comprobamos que este vacia la cadena
+      tarea.texto= tarea.texto.trim();// quitando espacios innecesarios
+      const tareasActualizadas = [tarea, ...tareas]; //generamos arreglos con los anteriores y nuevas tareas
+      setTareas(tareasActualizadas); //actualizamos el estado
+    }
   }
 
-  return (
-    <>
-      <TareaFormulario/>
+  return ( 
+    <>  
+      <TareaFormulario onSubmit={agregarTarea} />
       <div className='tareas-lista-contenedor'>
         {
           tareas.map((tarea) =>  
