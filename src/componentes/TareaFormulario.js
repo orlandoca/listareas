@@ -1,44 +1,36 @@
-import React, {useState} from 'react';
-import '../hojas-de-estilo/TareaFormulario.css';
-import uuid from 'react-uuid';
+import React, { useState } from "react";
+import "../hojas-de-estilo/TareaFormulario.css";
+import uuid from "react-uuid";
 
-function TareaFormulario(props){
+function TareaFormulario(props) {
+  const [input, setInput] = useState("");
 
-  const [input, setInput] = useState('');
-
-  const manejarCambio = e =>{
+  const manejarCambio = (e) => {
     setInput(e.target.value);
     console.log(e.target.value);
+  };
 
-  }
-
-  const manejarEnvio = e =>{
+  const manejarEnvio = (e) => {
     e.preventDefault();
-    
+
     const tareaNueva = {
       id: uuid(),
       texto: input,
-      completada: false
-    }
+      completada: false,
+    };
     props.onSubmit(tareaNueva);
-  }
-
-
+  };
 
   return (
-    <form 
-    className="tarea-formulario"
-    onSubmit={manejarEnvio}>
+    <form className="tarea-formulario" onSubmit={manejarEnvio}>
       <input
         className="tarea-input"
-        type='text'
+        type="text"
         placeholder="Ecribe una tarea"
         name="texto"
-        onChange= {manejarCambio}
+        onChange={manejarCambio}
       />
-      <button className="tarea-boton">
-        Agregar Tarea
-      </button>
+      <button className="tarea-boton">Agregar Tarea</button>
     </form>
   );
 }
